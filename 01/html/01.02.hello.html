@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Hello React</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="app2"></div>
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script>
+  ReactDOM.render(
+    React.DOM.h1({
+      className : "className",
+      htmlFor : "htmlFor"
+    },
+    "Hello world!"
+  ),
+  document.getElementById("app")
+);
+
+ReactDOM.render(
+  React.DOM.div({
+    style : {
+      width:"100px",
+      height:"100px",
+      background:"red",
+      fontFamily:"궁서"
+    }
+  },
+  "Hello world!"
+),document.getElementById("app2")
+);
+</script>
+</body>
+</html>
