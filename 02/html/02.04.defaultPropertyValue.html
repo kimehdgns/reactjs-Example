@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="app3"></div>
+  </body>
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script>
+    // var text = "text" in this.props ? this.props.text : "";
+    var Component = React.createClass({
+      render : function(){
+        return React.DOM.div(null,
+          React.DOM.div(null, "name : " + this.props.familyName + " " + this.props.middleName + " " + this.props.firstName),
+          React.DOM.div(null, "address : " + this.props.address)
+        )
+      },
+      propTypes : {
+        firstName : React.PropTypes.string.isRequired,
+        middleName : React.PropTypes.string,
+        familyName : React.PropTypes.string.isRequired,
+        address : React.PropTypes.string
+      },
+      getDefaultProps : function(){
+        return {
+          middleName : "",
+          address : "n/a"
+        };
+      }
+    });
+
+    ReactDOM.render(
+      React.createElement(Component, {
+        firstName : "Donghoon",
+        middleName : "nice",
+        familyName : "Kim",
+        address : "경기도 광명시 하안로 364"
+      }),
+      document.getElementById("app1")
+    );
+  </script>
+</html>
