@@ -19,3 +19,10 @@
 - 최소요건
 - 프로퍼티
 - propTypes (기본 프로퍼티 값)
+
+## 2017년 1월 4일
+- 상태
+- 상태 저장 텍스트 영역 컴포넌트 getInitialState / this.state.text
+- DOM 이벤트 참고 사항
+- 기존의 이벤트 처리방식
+- 리엑트의 이벤트 처리 {onChange : this._textChange}
