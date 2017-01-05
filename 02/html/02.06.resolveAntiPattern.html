@@ -12,7 +12,8 @@
   <script>
   var TextAreaCounter = React.createClass({
     propTypes : {
-      text : React.PropTypes.string
+      text : React.PropTypes.string,
+      defaultValue : React.PropTypes.string
     },
     getDefaultProps : function(){
       return {
@@ -28,10 +29,9 @@
         React.DOM.h3(null, this.state.text.length)
       );
     },
-
     getInitialState : function(){
       return {
-        text : this.props.text
+        text : this.props.defaultValue
       }
     },
     _textChange : function(ev){

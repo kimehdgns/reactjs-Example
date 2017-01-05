@@ -10,15 +10,7 @@
   <script src="../js/react.js"></script>
   <script src="../js/react-dom.js"></script>
   <script>
-  var TextAreaCounter = React.createClass({
-    propTypes : {
-      text : React.PropTypes.string
-    },
-    getDefaultProps : function(){
-      return {
-        text:""
-      }
-    },
+  var textAreaCounter = React.createClass({
     render : function(){
       return React.DOM.div(null,
         React.DOM.textarea({
@@ -28,11 +20,10 @@
         React.DOM.h3(null, this.state.text.length)
       );
     },
-
     getInitialState : function(){
       return {
         text : this.props.text
-      }
+      };
     },
     _textChange : function(ev){
       this.setState({
@@ -42,11 +33,28 @@
   });
 
 
-  ReactDOM.render(
-    React.createElement(TextAreaCounter, {
-      text:"Bob"
+  var myTextAreaCounter = ReactDOM.render(
+    React.createElement(textAreaCounter, {
+      defaultValue : "Bob",
+      text: "kim"
     }),
     document.getElementById("app1")
   );
+
+  myTextAreaCounter.setState({text:"new text !!"});
+  var reactAppNode = ReactDOM.findDOMNode(myTextAreaCounter);
+  console.log(reactAppNode);
+  console.log(reactAppNode == document.getElementById("app1"));
+  console.log(myTextAreaCounter.props);
+  console.log(myTextAreaCounter.state);
+
+  myTextAreaCounter = ReactDOM.render(
+    React.createElement(textAreaCounter, {
+      defaultValue : "Bo2323b",
+      text: "ki32323m"
+    }),
+    document.getElementById("app1")
+  );
+    console.log(myTextAreaCounter.props);
   </script>
 </html>

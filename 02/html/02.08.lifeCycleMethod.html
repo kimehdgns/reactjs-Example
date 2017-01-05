@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="app3"></div>
+  </body>
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script>
+  var lifeCycleTestComponent = React.createClass({
+    render : function(){
+      return React.DOM.div(null, "Asdfasf");
+    },
+    componentWillUpdate : function(){
+      console.log("componentWillUpdate");
+    },
+    componentDidUpdate : function(){
+      console.log("componentDidUpdate")
+    },
+    componentWillMount : function(){
+      console.log("componentWillMount")
+    },
+    componentDidMount : function(){
+      console.log("componentDidMount")
+    },
+    shouldComponentUpdate : function(newProps, newState){
+      console.log("shouldComponentUpdate")
+      return true;
+    }
+  });
+
+  var lifeCycleTestComponentUI = ReactDOM.render(
+    React.createElement(lifeCycleTestComponent, {text : "test text!"}),
+    document.getElementById("app1")
+  );
+
+  </script>
+</html>
